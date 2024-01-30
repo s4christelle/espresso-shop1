@@ -1,0 +1,22 @@
+NAME: redis-ha
+LAST DEPLOYED: Sun Jan 21 21:38:04 2024
+NAMESPACE: s4christelle
+STATUS: pending-install
+REVISION: 1
+TEST SUITE: None
+HOOKS:
+MANIFEST:
+---
+# Source: redis-ha/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+spec:
+  selector:
+    app: redis
+  ports:
+    - protocol: TCP
+      port: 6379
+      targetPort: 6379
+
